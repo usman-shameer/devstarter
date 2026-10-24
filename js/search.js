@@ -21,9 +21,8 @@ function buildResourceHaystack(resource) {
  * Matches against title and description (case-insensitive).
  */
 export function filterBySearch(resources, query) {
-  const searchTerm = (query ?? "").toLowerCase();
+  const searchTerm = (query ?? "").trim().toLowerCase();
 
-  // An empty query returns the full list.
   if (searchTerm.length === 0) {
     return resources;
   }
